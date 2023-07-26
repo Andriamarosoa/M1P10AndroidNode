@@ -10,14 +10,15 @@ COPY . .
 COPY package.json  ./package.json
 
 # Copy .env.docker to workdir/.env - use the docker env
-COPY .env.production ./.env
+COPY .env.example ./.env
 
 # Run npm install - install the npm dependencies
-RUN npm run sync
+# RUN npm run schema:sync
 RUN npm install
 
 # Expose internal port
 EXPOSE 3000
+EXPOSE 3307
 
 # Start the application
 CMD ["npm", "run", "dev"]
