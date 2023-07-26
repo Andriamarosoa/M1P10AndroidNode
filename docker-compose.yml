@@ -19,7 +19,7 @@ services:
     tty: true
     build:
       context: ./
-      dockerfile: ./docker/prod/Dockerfile
+      dockerfile: ./Dockerfile
     ports:
       - 50400:3000
     volumes:
