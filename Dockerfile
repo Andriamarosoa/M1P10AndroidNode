@@ -17,7 +17,7 @@ COPY .env.example ./.env
 RUN npm install
 
 # Expose internal port
-EXPOSE 3307
+EXPOSE 3000
 
 # Start the application
 CMD ["npm", "run", "start"]
