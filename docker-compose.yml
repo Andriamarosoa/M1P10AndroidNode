@@ -13,6 +13,8 @@ services:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - my_network
   app:
     container_name: M1P10AndroidNode
     stdin_open: true
@@ -24,7 +26,12 @@ services:
       - 50400:3000
     volumes:
       - ./:/var/www/M1P10AndroidNode
-  
+    networks:
+      - my_network
+    restart: always
 volumes:
   mysql_data:
+networks:
+  my_network:
+    driver: bridge
 
