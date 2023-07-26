@@ -9,8 +9,7 @@ export const databaseConfigValidator = Joi.object({
   DATABASE_USERNAME: Joi.string().required(),
   DATABASE_PASSWORD: Joi.string().allow(''),
   DATABASE_DB_NAME: Joi.string().required(),
-  APP_URLS: Joi.string().required(),
-  LOGISTIC_API_URL: Joi.string().required(),
+  APP_URLS: Joi.string().required()
 });
 
 export const getDatabaseConfig = (configService: ConfigService): any => ({
